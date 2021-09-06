@@ -9,14 +9,6 @@
     background-color: #153438;
 }
 
-#logout {
-    bottom: -84px;
-}
-
-#nav_side {  
-    position: relative;
-}
-
 #main_content, #left_content, #right_content {
     min-height: 80vh;
 }
@@ -54,7 +46,6 @@
 }
 
 #right_content {
-    max-height: 80vh;
     position: relative;
 }
 

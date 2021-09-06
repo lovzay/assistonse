@@ -20,7 +20,7 @@ article {
     position: absolute;
     right: -20px;
     top: -10px;
-    height: 20px;
+    line-height: 20px;
     font-size: 80px;
     background-color: #1C3948;
     border-radius: 10px;
@@ -29,12 +29,13 @@ article {
 
 .article_menu span {
     display: block;
-    margin-top: -80px;
 }
 
-.article_menu a {
+.article_menu #dropdownMenu a {
     color: #F4DD58;
     text-decoration: none;
+    position: relative;
+    top: -30px;
 }
 
 .articles {
@@ -57,6 +58,7 @@ article {
 #summary_contents {    
     background-color: #F4DD58;
     overflow-y: auto;    
+    overflow-wrap: break-word;
     height: calc(80vh - 220px);
 }
 

@@ -9,6 +9,7 @@
         <link href="../css/main.css" rel="stylesheet">
         <link href="../css/dashboard.css" rel="stylesheet">
         <link href="../css/edit_articles.css" rel="stylesheet">
+        <link href="../css/news_archive.css" rel="stylesheet">
     <body>
         <div class="container-fluid">
             <nav id="nav" class="navbar navbar-expand-md navbar-dark py-0">
@@ -44,7 +45,7 @@
                 </a>
                 <ul id="nav_side" class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Archive</a>
+                        <a class="nav-link text-light" href="./news_archive.html">Archive</a>
                     </li>
 
                     <li class="nav-item text-center mb-3">
@@ -57,19 +58,25 @@
                 <div class="col-12 col-lg-8 text-center p-3">
                     <form action="index.html">
                     <div class="d-block mb-2">
-                        <button target="" type="submit" class="button btn btn-dark px-5 border-1 border-light" href="index.html">Save</button>
+                        <button target="" type="submit" class="button btn btn-dark px-5 border-1 border-light" href="./guidebook.html">Save</button>
                     </div>
 
                     <a href="#" class="text-light"><i class="bi bi-plus-circle-fill"></i></a>
 
                     <article class="border border-light rounded-3 mt-3 p-3 text-start">
                         <div class="article_menu px-1">
-                            <span><a href="#">...</a></span>
+                            <div class="dropdown">
+                                <span id="dropdownMenu" data-bs-toggle="dropdown"><a href="#">...</a></span>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+                                  <li><a class="dropdown-item" href="#">Archive</a></li>
+                                  <li><a class="dropdown-item" href="#">Delete</a></li>
+                                </ul>
+                            </div>
                         </div>
                         <img class="rounded-3" width="100%" src="../img/article/1.png" alt="People cleaning on the road's sidewalk">
                         
                         <fieldset class="pt-3">
-                            <input type="text" class="form-control bg-dark text-light" id="title[]" value="Title title title title title title title title title title">
+                            <input type="text" data-id="1" name="test" class="title form-control bg-dark text-light" value="Title title title title title title title title">
 
                             <div class="container-fluid pt-3 d-block">
                                 <div class="row">
@@ -79,8 +86,8 @@
                                                 <label for="email" class="form-label d-block">Date from:</label>
                                             </div>
                                             <div class="col-12 col-md-6">
-                                                <input type="date" class="from-control bg-dark text-light rounded-1 mb-3 w-100" value="2021-01-01">
-                                                <input type="time" class="from-control bg-dark text-light rounded-1 time" value="12:00">
+                                                <input type="date" data-id="1" class="sdate form-control bg-dark text-light rounded-1 mb-3 w-100" value="2021-01-01">
+                                                <input type="time" class="form-control bg-dark text-light rounded-1 time" value="12:00">
                                             </div>
                                         </div>
                                     </div> 
@@ -90,8 +97,8 @@
                                                 <label for="email" class="form-label d-block">Date until:</label>
                                             </div>
                                             <div class="col-12 col-md-6">
-                                                <input type="date" class="from-control bg-dark text-light rounded-1 mb-3 w-100" value="2021-01-16">
-                                                <input type="time" class="from-control bg-dark text-light rounded-1 time" value="12:00">
+                                                <input type="date" class="form-control bg-dark text-light rounded-1 mb-3 w-100" value="2021-01-16">
+                                                <input type="time" class="form-control bg-dark text-light rounded-1 time" value="12:00">
                                             </div>
                                         </div>
                                     </div>
@@ -99,17 +106,23 @@
                             </div>
                         </fieldset>
 
-                        <textarea class="form-control mt-4 w-100 text-light bg-dark" col="5">Lorem ipsum do</textarea>
+                        <textarea data-id="1" class="desc form-control mt-4 w-100 text-light bg-dark" col="5">Lorem ipsum do</textarea>
                     </article>
 
                     <article class="border border-light rounded-3 mt-3 p-3 text-start">
                         <div class="article_menu px-1">
-                            <span><a href="#">...</a></span>
+                            <div class="dropdown">
+                                <span id="dropdownMenu" data-bs-toggle="dropdown"><a href="#">...</a></span>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+                                  <li><a class="dropdown-item" href="#">Archive</a></li>
+                                  <li><a class="dropdown-item" href="#">Delete</a></li>
+                                </ul>
+                            </div>
                         </div>
                         <img class="rounded-3" width="100%" src="../img/article/1.png" alt="People cleaning on the road's sidewalk">
                         
                         <fieldset class="pt-3">
-                            <input type="text" class="form-control bg-dark text-light" id="title[]" value="Title title title title title title title title title title">
+                            <input type="text" data-id="2" class="title form-control bg-dark text-light" value="Title title title title title title title title">
 
                             <div class="container-fluid pt-3 d-block">
                                 <div class="row">
@@ -119,8 +132,8 @@
                                                 <label for="email" class="form-label d-block">Date from:</label>
                                             </div>
                                             <div class="col-12 col-md-6">
-                                                <input type="date" class="from-control bg-dark text-light rounded-1 mb-3 w-100" value="2021-01-01">
-                                                <input type="time" class="from-control bg-dark text-light rounded-1 time" value="12:00">
+                                                <input type="date" data-id="2" class="sdate form-control bg-dark text-light rounded-1 mb-3 w-100" value="2021-01-01">
+                                                <input type="time" class="form-control bg-dark text-light rounded-1 time" value="12:00">
                                             </div>
                                         </div>
                                     </div> 
@@ -130,8 +143,8 @@
                                                 <label for="email" class="form-label d-block">Date until:</label>
                                             </div>
                                             <div class="col-12 col-md-6">
-                                                <input type="date" class="from-control bg-dark text-light rounded-1 mb-3 w-100" value="2021-01-16">
-                                                <input type="time" class="from-control bg-dark text-light rounded-1 time" value="12:00">
+                                                <input type="date" class="form-control bg-dark text-light rounded-1 mb-3 w-100" value="2021-01-16">
+                                                <input type="time" class="form-control bg-dark text-light rounded-1 time" value="12:00">
                                             </div>
                                         </div>
                                     </div>
@@ -139,13 +152,13 @@
                             </div>
                         </fieldset>
 
-                        <textarea class="form-control mt-4 w-100 text-light bg-dark" col="5">Lorem ipsum do</textarea>
+                        <textarea data-id="2" class="desc form-control mt-4 w-100 text-light bg-dark" col="5">Lorem ipsum do</textarea>
                     </article>
 
                     </form>
                 </div>
                 <div class="d-md-none d-lg-block col-lg-4" id="summary_div">
-                    <div id="summary">
+                    <div id="summary" class="sticky-top">
                         <div id="subheader" class="text-center p-3">
                             <img src="../img/logo_2.png" width="100px">
                             <img id="person" src="../img/subheader.png">
@@ -154,21 +167,21 @@
                         <h3 class="text-center m-0">TOP NEWS <hr></h3>
                         <div id="summary_contents" class="p-3">
                             <div class="articles text-light rounded-3 p-2">
-                                <h4>Title title title title title title title title</h4>
+                                <h4 class="title_m1">Title title title title title title title title</h4>
                                 
                                 <img src="../img/article/1.png" width="100%">
 
-                                <small>01/01/2021</small>
-                                <p>Lorem ipsum do</p>
+                                <small class="date_m1">2021-01-01</small>
+                                <p class="desc_m1">Lorem ipsum do</p>
                             </div>
 
                             <div class="articles text-light rounded-3 p-2">
-                                <h4>Title title title title title title title title</h4>
+                                <h4 class="title_m2">Title title title title title title title title</h4>
                                 
                                 <img src="../img/article/1.png" width="100%">
 
-                                <small>01/01/2021</small>
-                                <p>Lorem ipsum do</p>
+                                <small class="date_m2">2021-01-01</small>
+                                <p class="desc_m2">Lorem ipsum do</p>
                             </div>
                         </div>
 
@@ -202,5 +215,36 @@
         </div>
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+        <script>
+            let selectElement = document.querySelectorAll('.title');
+
+            selectElement.forEach(e => 
+                e.addEventListener('keyup', (event) => {
+                    const target = document.querySelector('.title_m' + event.srcElement.dataset.id);
+                    
+                    target.innerHTML = event.srcElement.value;
+                })
+            );
+
+            selectElement = document.querySelectorAll('.sdate');
+
+            selectElement.forEach(e => 
+                e.addEventListener('change', (event) => {
+                    const target = document.querySelector('.date_m' + event.srcElement.dataset.id);
+                    
+                    target.innerHTML = event.srcElement.value;
+                })
+            );
+
+            selectElement = document.querySelectorAll('.desc');
+
+            selectElement.forEach(e => 
+                e.addEventListener('keyup', (event) => {
+                    const target = document.querySelector('.desc_m' + event.srcElement.dataset.id);
+                    
+                    target.innerHTML = event.srcElement.value;
+                })
+            );
+        </script>
     </body>
 </html>

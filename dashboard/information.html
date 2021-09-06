@@ -75,7 +75,7 @@
                 <div class="col-6 col-md-4">
                     <div id="brgy_clear_search" class="row bg-light w-100">
                         <a href="#"><i class="bi bi-search w-auto text-dark"></i></a>
-                        <input type="text" class="form-control rounded-0">
+                        <input type="text" class="form-control rounded-0" id="search_input">
                     </div>
                 </div>
             </div>
@@ -90,48 +90,98 @@
                                 <th class="p-3" scope="col">Name</th>
                                 <th class="p-3" scope="col">Email address</th>
                                 <th class="p-3" scope="col">Mobile Number</th>
-                                <th class="p-3" scope="col">Signature</th>
                                 <th class="p-3" scope="col">Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th class="p-3" scope="row">01</th>
-                                    <td class="p-3">Dela Cruz, Juan</td>
+                                <tr class="d-none hidden1">
+                                    <th scope="row">01</th>
+                                    <td>
+                                        <input type="text" value="Dela Cruz, Juan">
+                                    </td>
+                                    <td>
+                                        <input type="email" value="juan.delacruz@gmail.com">
+                                    </td>
+                                    <td>
+                                        <input type="text" value="+6391234567890">
+                                    </td>
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            <li><a href="#" class="text-light text-decoration-none">Save</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <tr class="display1">
+                                    <th class="p-3 searchable" scope="row">01</th>
+                                    <td class="p-3 searchable">Dela Cruz, Juan</td>
                                     <td class="p-3">juan.delacruz@gmail.com</td>
                                     <td class="p-3">+6391234567890</td>
-                                    <td class="p-3">View</td>
                                     <td class="p-3">
-                                        <ul class="list-unstyled d-flex justify-content-start">
-                                            <li class="me-2"><a href="#" class="text-light text-decoration-none">Edit</a></li>
+                                        <ul class="list-unstyled d-flex justify-content-center">
+                                            <li class="me-2"><a href="#" data-id="1" class="edit text-light text-decoration-none">Edit</a></li>
                                             <li><a href="#" class="text-light text-decoration-none">Remove</a></li>
                                         </ul>
                                     </td>
                                 </tr>
 
-                                <tr>
-                                    <th class="p-3" scope="row">02</th>
-                                    <td class="p-3">Dela Cruz, Juan</td>
+                                <tr class="d-none hidden2">
+                                    <th scope="row">02</th>
+                                    <td>
+                                        <input type="text" value="Dela Cruz, Juan">
+                                    </td>
+                                    <td>
+                                        <input type="email" value="juan.delacruz@gmail.com">
+                                    </td>
+                                    <td>
+                                        <input type="text" value="+6391234567890">
+                                    </td>
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            <li><a href="#" class="text-light text-decoration-none">Save</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <tr class="display2">
+                                    <th class="p-3 searchable" scope="row">02</th>
+                                    <td class="p-3 searchable">Dela Cruz, Juan</td>
                                     <td class="p-3">juan.delacruz@gmail.com</td>
                                     <td class="p-3">+6391234567890</td>
-                                    <td class="p-3">View</td>
                                     <td class="p-3">
-                                        <ul class="list-unstyled d-flex justify-content-start">
-                                            <li class="me-2"><a href="#" class="text-light text-decoration-none">Edit</a></li>
+                                        <ul class="list-unstyled d-flex justify-content-center">
+                                            <li class="me-2"><a href="#" data-id="2" class="edit text-light text-decoration-none">Edit</a></li>
                                             <li><a href="#" class="text-light text-decoration-none">Remove</a></li>
                                         </ul>
                                     </td>
                                 </tr>
 
-                                <tr>
-                                    <th class="p-3" scope="row">03</th>
-                                    <td class="p-3">Dela Cruz, Juan</td>
+                                <tr class="d-none hidden3">
+                                    <th scope="row">03</th>
+                                    <td>
+                                        <input type="text" value="Dela Cruz, Juan">
+                                    </td>
+                                    <td>
+                                        <input type="email" value="juan.delacruz@gmail.com">
+                                    </td>
+                                    <td>
+                                        <input type="text" value="+6391234567890">
+                                    </td>
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            <li><a href="#" class="text-light text-decoration-none">Save</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                                <tr class="display3">
+                                    <th class="p-3 searchable" scope="row">03</th>
+                                    <td class="p-3 searchable">Dela Cruz, Juan</td>
                                     <td class="p-3">juan.delacruz@gmail.com</td>
                                     <td class="p-3">+6391234567890</td>
-                                    <td class="p-3">View</td>
                                     <td class="p-3">
-                                        <ul class="list-unstyled d-flex justify-content-start">
-                                            <li class="me-2"><a href="#" class="text-light text-decoration-none">Edit</a></li>
+                                        <ul class="list-unstyled d-flex justify-content-center">
+                                            <li class="me-2"><a href="#" data-id="3" class="edit text-light text-decoration-none">Edit</a></li>
                                             <li><a href="#" class="text-light text-decoration-none">Remove</a></li>
                                         </ul>
                                     </td>
@@ -139,7 +189,6 @@
 
                                 <tr>
                                     <th class="p-5"  scope="row"></th>
-                                    <td class="p-5"></td>
                                     <td class="p-5"></td>
                                     <td class="p-5"></td>
                                     <td class="p-5"></td>
@@ -175,11 +224,6 @@
                             <label class="d-block mb-2">Re-type Password</label>
                             <input type="password" class="form-control rounded-0">
                         </div>
-
-                        <div class="form-group mb-3">
-                            <label class="d-block mb-2">Signature</label>
-                            <button type="button" class="btn btn-dark py-1 px-4 border-light">Save <i class="bi bi-upload ms-2"></i></button>
-                        </div>
                     </div>
                     <div class="modal-footer pt-0 pb-5 border-0 d-flex justify-content-center">
                         <button type="submit" class="btn btn-dark py-1 px-4 border-light">Save</button>
@@ -190,5 +234,39 @@
         </div>
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+        <script>
+            const edit = document.querySelectorAll('.edit');
+
+            edit.forEach(e => 
+                e.addEventListener('click', (event) => {
+                    const hide = document.querySelector('.hidden' + event.srcElement.dataset.id);
+                    const show = document.querySelector('.display' + event.srcElement.dataset.id);
+                    
+                    hide.classList.remove("d-none");
+                    show.classList.add("d-none");
+                })
+            );
+
+            const search = document.querySelector('#search_input');
+
+            search.addEventListener('keyup', (event) => {
+                const trs = document.querySelectorAll("tr");
+
+                trs.forEach(tr => {
+                    const texts = tr.querySelectorAll('.searchable');
+                    if (texts.length != 0) {
+                        if (texts[0].innerHTML.includes(event.srcElement.value)) {         
+                            tr.classList.remove('d-none');
+                        } else {
+                            if (texts[1].innerHTML.includes(event.srcElement.value)) {         
+                                tr.classList.remove('d-none');
+                            } else {
+                                tr.classList.add('d-none');
+                            }
+                        }
+                    }
+                });
+            });
+        </script>
     </body>
 </html>

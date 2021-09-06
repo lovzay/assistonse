@@ -61,11 +61,10 @@
 
             <div id="brgy_buttons" class="row m-0 pt-3 pe-0 pe-md-3 rounded-3">
                 <div class="col-12 col-md-4 fs-6 mb-3 mb-md-0">
-                    <button class="btn btn-dark py-0 px-1 border-light">See Archive</button>
+                    <a class="btn btn-dark py-0 px-1 border-light custom_active" id="archive" href="./archive_activities.html">See Archive</a>
                     <button class="btn btn-dark py-0 px-1 border-light">Export <i class="bi bi-box-arrow-up-right"></i></button>
                 </div>
                 <div class="col-12 col-md-4 text-center">
-                    <a class="btn btn-dark py-0 px-3 border-light" href="./add_activity.html">Add Activity</a>
                 </div>
             </div>
 
@@ -87,46 +86,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">23</th>
-                                    <td>
-                                        <div class="form-group">
-                                            <label>Date from:</label>
-                                            <input type="datetime-local" class="form-control rounded-0">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Date until:</label>
-                                            <input type="datetime-local" class="form-control rounded-0">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control rounded-0">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control rounded-0">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control rounded-0">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control rounded-0">
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <ul class="list-unstyled text-start">
-                                            <li class="text-center"><a href="#" class="text-light text-decoration-none"><i class="bi bi-plus-circle-fill"></i></a></li>
-                                        </ul>
-                                    </td>
-                                    <td></td>
-                                    <td><a href="./activities.html" class="text-light text-decoration-none">Save</a></td>
-                                <tr>
+                                <tr class="d-none display1">
                                     <th scope="row">23</th>
                                     <td>
                                         Date From: <br>
@@ -157,15 +117,15 @@
                                     </td>
                                     <td>
                                         <ul class="list-unstyled">
-                                            <li><a href="#" class="text-light text-decoration-none">Forward</a></li>                                            
-                                            <li><a href="#" class="text-light text-decoration-none" data-bs-toggle="modal" data-bs-target="#modal_participants">Participants</a></li>
-                                            <li><a href="#" class="text-light text-decoration-none">Edit</a></li>
-                                            <li><a href="#" class="text-light text-decoration-none">Remove</a></li>
+                                            <ul class="list-unstyled">
+                                                <li><a href="#" class="text-light text-decoration-none">Restore</a></li>
+                                                <li><a href="#" class="text-light text-decoration-none">Delete</a></li>
+                                            </ul>
                                         </ul>
                                     </td>
                                 </tr>
 
-                                <tr>
+                                <tr class="d-none display2">
                                     <th scope="row">24</th>
                                     <td>
                                         Date From: <br>
@@ -196,10 +156,8 @@
                                     </td>
                                     <td>
                                         <ul class="list-unstyled">
-                                            <li><a href="#" class="text-light text-decoration-none">Forward</a></li>
-                                            <li><a href="#" class="text-light text-decoration-none">Participants</a></li>
-                                            <li><a href="#" class="text-light text-decoration-none">Edit</a></li>
-                                            <li><a href="#" class="text-light text-decoration-none">Remove</a></li>
+                                            <li><a href="#" class="text-light text-decoration-none">Restore</a></li>
+                                            <li><a href="#" class="text-light text-decoration-none">Delete</a></li>
                                         </ul>
                                     </td>
                                 </tr>
@@ -259,5 +217,22 @@
         </div>
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+        <script>
+            window.addEventListener('DOMContentLoaded', (event) => {               
+                const archive = document.querySelector('#archive');
+                const url = new URL(window.location.href);
+                archive.setAttribute('href', url);
+
+                let params = new URLSearchParams(document.location.search.substring(1));
+                let item1 = params.get('item1');
+                let item2 = params.get('item2');
+
+                if (document.querySelector('.display' + item1) != null)
+                    document.querySelector('.display' + item1).classList.remove('d-none');
+
+                if (document.querySelector('.display' + item2) != null)
+                    document.querySelector('.display' + item2).classList.remove('d-none');
+            });
+        </script>
     </body>
 </html>

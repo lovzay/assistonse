@@ -6,26 +6,10 @@
     bottom: 20px !important;
 }
 
-#main_content {
-    width: 130vw;
+#modal_participants .modal-dialog {
+    width: fit-content;
 }
 
-#participants {
-    border-radius: 10px;
-    background-color: #1C3948;
-    border-color: rgba(255, 255, 255, .2) !important;
-    height: 50vh;
-    overflow-y: auto;
-}
-
-#participants p {
-    border-bottom: 5px solid #71989B;
-}
-
-#participants i {
-    color: #71989B;
-}
-
-#table_border {
-    height: fit-content;
+#modal_participants .modal-body {
+    padding: 0 50px;
 }

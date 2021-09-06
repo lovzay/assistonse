@@ -76,7 +76,7 @@
 
             <div id="brgy_buttons" class="row m-0 pt-3 pe-0 pe-md-3 rounded-3">
                 <div class="col-12 col-md-4 fs-6 mb-3 mb-md-0">                    
-                    <a class="btn btn-dark py-0 px-1 border-light" id="archive" href="./archive_registrations.html">See archive</a>
+                    <a class="btn btn-dark py-0 px-1 border-light custom_active" id="archive" href="./archive_registrations.html">See archive</a>
                     <button class="btn btn-dark py-0 px-1 border-light">Export <i class="bi bi-box-arrow-up-right"></i></button>
                 </div>
                 <div class="col-6 col-md-4 text-center">
@@ -106,7 +106,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                                <tr class="display1">
+                                <tr class="d-none display1">
                                     <th class="p-3 searchable" scope="row">1001</th>
                                     <td class="p-3 searchable">Dela Cruz, Juan</td>
                                     <td class="p-3">+6391234567890</td>                               
@@ -123,7 +123,7 @@
                                     </td>
                                 </tr>
 
-                                <tr class="display2">
+                                <tr class="d-none display2">
                                     <th class="p-3 searchable" scope="row">1002</th>
                                     <td class="p-3 searchable">Dela Cruz, Juan</td>
                                     <td class="p-3">+6391234567890</td>                               
@@ -140,7 +140,7 @@
                                     </td>
                                 </tr>
 
-                                <tr class="display3">
+                                <tr class="d-none display3">
                                     <th class="p-3 searchable" scope="row">1003</th>
                                     <td class="p-3 searchable">Dela Cruz, Juan</td>
                                     <td class="p-3">+6391234567890</td>                               
@@ -157,7 +157,7 @@
                                     </td>
                                 </tr>
 
-                                <tr class="display4">
+                                <tr class="d-none display4">
                                     <th class="p-3 searchable" scope="row">1004</th>
                                     <td class="p-3 searchable">Dela Cruz, Juan</td>
                                     <td class="p-3">+6391234567890</td>                               
@@ -174,7 +174,7 @@
                                     </td>
                                 </tr>
 
-                                <tr class="display5">
+                                <tr class="d-none display5">
                                     <th class="p-3 searchable" scope="row">1005</th>
                                     <td class="p-3 searchable">Dela Cruz, Juan</td>
                                     <td class="p-3">+6391234567890</td>                               
@@ -191,7 +191,7 @@
                                     </td>
                                 </tr>
 
-                                <tr class="display6">
+                                <tr class="d-none display6">
                                     <th class="p-3 searchable" scope="row">1006</th>
                                     <td class="p-3 searchable">Dela Cruz, Juan</td>
                                     <td class="p-3">+6391234567890</td>                               
@@ -208,7 +208,7 @@
                                     </td>
                                 </tr>
 
-                                <tr class="display7">
+                                <tr class="d-none display7">
                                     <th class="p-3 searchable" scope="row">1007</th>
                                     <td class="p-3 searchable">Dela Cruz, Juan</td>
                                     <td class="p-3">+6391234567890</td>                               
@@ -225,7 +225,7 @@
                                     </td>
                                 </tr>
 
-                                <tr class="display8">
+                                <tr class="d-none display8">
                                     <th class="p-3 searchable" scope="row">1008</th>
                                     <td class="p-3 searchable">Dela Cruz, Juan</td>
                                     <td class="p-3">+6391234567890</td>                               
@@ -336,22 +336,46 @@
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
         <script>
-            const remove = document.querySelectorAll('.remove');
+            window.addEventListener('DOMContentLoaded', (event) => {               
+                const archive = document.querySelector('#archive');
+                const url = new URL(window.location.href);
+                archive.setAttribute('href', url);
 
-            remove.forEach(e => 
-                e.addEventListener('click', (event) => {
-                    const hide = document.querySelector('.display' + event.srcElement.dataset.id);
-                    
-                    hide.classList.add("d-none");
-                    
-                    const archive = document.querySelector('#archive');
-                    
-                    const url = new URL(archive);
-                    url.searchParams.set('item' + event.srcElement.dataset.id, event.srcElement.dataset.id);
+                let params = new URLSearchParams(document.location.search.substring(1));
+                let item1 = params.get('item1');
+                let item2 = params.get('item2');
+                let item3 = params.get('item3');
+                let item4 = params.get('item4');
+                let item5 = params.get('item5');
+                let item6 = params.get('item6');
+                let item7 = params.get('item7');
+                let item8 = params.get('item8');
 
-                    archive.setAttribute('href', url);
-                })
-            );
+
+                if (document.querySelector('.display' + item1) != null)
+                    document.querySelector('.display' + item1).classList.remove('d-none');
+
+                if (document.querySelector('.display' + item2) != null)
+                    document.querySelector('.display' + item2).classList.remove('d-none');
+
+                if (document.querySelector('.display' + item3) != null)
+                    document.querySelector('.display' + item3).classList.remove('d-none');
+
+                if (document.querySelector('.display' + item4) != null)
+                    document.querySelector('.display' + item4).classList.remove('d-none');
+
+                if (document.querySelector('.display' + item5) != null)
+                    document.querySelector('.display' + item5).classList.remove('d-none');
+
+                if (document.querySelector('.display' + item6) != null)
+                    document.querySelector('.display' + item6).classList.remove('d-none');
+
+                if (document.querySelector('.display' + item7) != null)
+                    document.querySelector('.display' + item7).classList.remove('d-none');
+
+                if (document.querySelector('.display' + item8) != null)
+                    document.querySelector('.display' + item8).classList.remove('d-none');
+            });
 
             const search = document.querySelector('#search_input');
 
@@ -361,17 +385,57 @@
                 trs.forEach(tr => {
                     const texts = tr.querySelectorAll('.searchable');
                     if (texts.length != 0) {
-                        if (texts[0].innerHTML.includes(event.srcElement.value)) {         
-                            tr.classList.remove('d-none');
+                        let params = new URLSearchParams(document.location.search.substring(1));
+                        let item1 = params.get('item1');
+                        let item2 = params.get('item2');
+                        let item3 = params.get('item3');
+                        let item4 = params.get('item4');
+                        let item5 = params.get('item5');
+                        let item6 = params.get('item6');
+                        let item7 = params.get('item7');
+                        let item8 = params.get('item8');
+
+                        if (texts[0].innerHTML.includes(event.srcElement.value)) {
+                            if(document.querySelector('.display' + item1) != null && tr.classList.contains('display' + item1))
+                                tr.classList.remove('d-none');
+                            else if(document.querySelector('.display' + item2) != null && tr.classList.contains('display' + item2))
+                                tr.classList.remove('d-none');
+                            else if(document.querySelector('.display' + item3) != null && tr.classList.contains('display' + item3))
+                                tr.classList.remove('d-none');
+                            else if(document.querySelector('.display' + item4) != null && tr.classList.contains('display' + item4))
+                                tr.classList.remove('d-none');
+                            else if(document.querySelector('.display' + item5) != null && tr.classList.contains('display' + item5))
+                                tr.classList.remove('d-none');
+                            else if(document.querySelector('.display' + item6) != null && tr.classList.contains('display' + item6))
+                                tr.classList.remove('d-none');
+                            else if(document.querySelector('.display' + item7) != null && tr.classList.contains('display' + item7))
+                                tr.classList.remove('d-none');
+                            else if(document.querySelector('.display' + item8) != null && tr.classList.contains('display' + item8))
+                                tr.classList.remove('d-none');
                         } else {
                             if (texts[1].innerHTML.includes(event.srcElement.value)) {         
-                                tr.classList.remove('d-none');
+                                if(document.querySelector('.display' + item1) != null && tr.classList.contains('display' + item1))
+                                    tr.classList.remove('d-none');
+                                else if(document.querySelector('.display' + item2) != null && tr.classList.contains('display' + item2))
+                                    tr.classList.remove('d-none');
+                                else if(document.querySelector('.display' + item3) != null && tr.classList.contains('display' + item3))
+                                    tr.classList.remove('d-none');
+                                else if(document.querySelector('.display' + item4) != null && tr.classList.contains('display' + item4))
+                                    tr.classList.remove('d-none');
+                                else if(document.querySelector('.display' + item5) != null && tr.classList.contains('display' + item5))
+                                    tr.classList.remove('d-none');
+                                else if(document.querySelector('.display' + item6) != null && tr.classList.contains('display' + item6))
+                                    tr.classList.remove('d-none');
+                                else if(document.querySelector('.display' + item7) != null && tr.classList.contains('display' + item7))
+                                    tr.classList.remove('d-none');
+                                else if(document.querySelector('.display' + item8) != null && tr.classList.contains('display' + item8))
+                                    tr.classList.remove('d-none');
                             } else {
                                 tr.classList.add('d-none');
                             }
                         }
                     }
-                });
+                });            
             });
         </script>
     </body>
